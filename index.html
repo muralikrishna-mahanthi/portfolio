@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murali Krishna | Portfolio</title>
+    <!-- Fun, Quirky Typefaces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Interactive 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#hero" class="logo">MK</a>
+        <div class="nav-links">
+            <a href="#about" class="nav-btn">About</a>
+            <a href="#experience" class="nav-btn">Experience</a>
+            <a href="#skills" class="nav-btn">Skills</a>
+            <a href="#projects" class="nav-btn">Projects</a>
+            <a href="#contact" class="nav-btn">Contact</a>
+        </div>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" style="display: none;">☰</button>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="section-container">
+            <div class="content pop-in">
+                <div class="hero-badge">👋 Hey!</div>
+                <h1 class="hero-title">I'm Murali<br><span class="highlight-text">Krishna.</span></h1>
+                <h2 class="hero-subtitle">I turn caffeine into <span class="highlight-yellow">creative web experiences.</span></h2>
+                <p class="summary">
+                    Computer science engineering graduate & software developer. 
+                    I build colorful, interactive, and accessible human-centered Websites <strong class="badge-text" style="background: #a855f7; color: white;">Unique</strong>. Let's make the web fun again!
+                </p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn-brutal btn-primary">See My Work 🚀</a>
+                    <a href="#contact" class="btn-brutal btn-secondary">Let's Chat 💬</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <a href="#about">
+                    <div class="mouse-icon"></div>
+                    <span>Scroll Down</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-container">
+            <h2 class="section-title text-center pop-in hidden">A Bit <span class="highlight-text">About Me</span></h2>
+            <div class="brutal-card card-yellow hidden pop-in">
+                <div class="card-pattern"></div>
+                <div class="about-content">
+                    <p class="lead-text">I believe coding should be as fun as playing a video game.</p>
+                    <p>I am a Computer Science Engineering graduate from Andhra University (AUCE). My passion for web development began when I started building small custom themes and interactive interfaces just for the fun of it.</p>
+                    <p>I have worked on several projects including Shopify dropshipping stores, product landing pages, and responsive business websites. My work involves designing layouts, integrating features, optimizing performance, and ensuring websites work smoothly across all devices and browsers.</p>
+                    <p>In addition to development, I understand the importance of user experience (UX), performance optimization, and ecommerce conversion strategies. This helps me build websites that are not only attractive but also effective in achieving business goals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section-container">
+            <h2 class="section-title text-center pop-in hidden">My <span class="highlight-yellow">Journey</span></h2>
+            <div class="timeline">
+                <div class="brutal-card card-blue hidden slide-right">
+                    <div class="job-header">
+                        <h3>Web Developer <span class="pill pill-purple">@ Wayspire Pvt Ltd</span></h3>
+                        <span class="date-badge">Recent</span>
+                    </div>
+                    <ul class="job-details bullet-stars">
+                        <li>Developing and maintaining highly interactive web applications using modern JavaScript frameworks.</li>
+                        <li>Brainstorming and implementing scalable, creative frontend solutions.</li>
+                        <li>Ensuring everything looks pixel-perfect and runs at lightning speed.</li>
+                    </ul>
+                </div>
+                <div class="brutal-card card-pink hidden slide-left">
+                    <div class="job-header">
+                        <h3>B.Tech CS Graduate <span class="pill pill-yellow">@ AUCE</span></h3>
+                        <span class="date-badge">Graduated</span>
+                    </div>
+                    <ul class="job-details bullet-stars">
+                        <li>Mastered the art of Data Structures and Algorithms.</li>
+                        <li>Participated in intense coding competitions and fueled university tech events.</li>
+                        <li>Built a solid foundation in core Computer Science principles.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section with Embedded 3D Render -->
+        <section id="skills" class="section-container">
+            <h2 class="section-title text-center pop-in hidden">My <span class="highlight-text">Toolbox</span></h2>
+            <div class="skills-wrapper">
+                <div class="skills-content hidden pop-in">
+                    <div class="skills-grid">
+                        <span class="skill-tag tag-html">HTML5</span>
+                        <span class="skill-tag tag-css">CSS3</span>
+                        <span class="skill-tag tag-js">JavaScript (ES6+)</span>
+                        <span class="skill-tag tag-node">Liquid</span>
+                        <span class="skill-tag tag-react">React JS</span>
+                        <span class="skill-tag tag-python">GitHub</span>
+                        <span class="skill-tag tag-ml">Canva</span>
+                        <span class="skill-tag tag-ds">Data Structures</span>
+                        <span class="skill-tag tag-algo">Algorithms</span>
+                    </div>
+                </div>
+                <!-- Container for Interactive 3D Play Object -->
+                <div class="skills-3d hidden pop-in" id="cube-container">
+                    <div class="drag-hint">Drag Me! 👆</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-container">
+            <h2 class="section-title text-center pop-in hidden">Cool <span class="highlight-yellow">Stuff I Built</span></h2>
+            <div class="projects-grid">
+                <div class="brutal-card card-white hidden pop-in">
+                    <div class="project-header">
+                        <div class="icon-box">🛒</div>
+                        <h3 class="project-title">E-Commerce Fashion</h3>
+                    </div>
+                    <p class="project-desc">A vibrant, full-featured Shopify Fashion store. Includes dynamic search, secure payment gateways, and a blazing-fast JSON-based admin sales tracking dashboard.</p>
+                    <div class="project-tech">
+                        <span class="pill pill-blue">Liquid</span>
+                        <span class="pill pill-yellow">JavaScript</span>
+                        <span class="pill pill-purple">HTML</span>
+                        <span class="pill pill-green">CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://sebastiann.store/" target="_blank" class="btn-brutal btn-green">View Project <span class="arrow"> ➔</span></a>
+                    </div>
+                </div>
+                <div class="brutal-card card-green hidden pop-in" style="transition-delay: 0.2s;">
+                    <div class="project-header">
+                        <div class="icon-box">🚗</div>
+                        <h3 class="project-title">Autonomous Vehicle Sim</h3>
+                    </div>
+                    <p class="project-desc">Engineered a Reinforcement Learning model to test vehicle steering. Hooked it up to Python's CARLA simulator for ultra-realistic autonomous driving environments!</p>
+                    <div class="project-tech">
+                        <span class="pill pill-yellow">Python</span>
+                        <span class="pill pill-blue">Machine Learning</span>
+                        <span class="pill pill-pink">CARLA</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://sebastiann.store/" target="_blank" class="btn-brutal btn-white">View Project <span class="arrow"> ➔</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-container">
+            <div class="brutal-card card-purple contact-content hidden pop-in text-center">
+                <h2 class="section-title text-white">Let's Create <span class="highlight-yellow">Magic</span></h2>
+                <p class="contact-desc text-white">I'm currently looking for new opportunities in Web Development and Software Engineering. Whether you want to build something wild, or just say hi, my inbox is open!</p>
+                <div class="contact-btns">
+                    <a href="mailto:muralikrishnamahanthi135@gmail.com" class="btn-brutal btn-yellow pulse-anim">Drop me an Email 💌</a>
+                </div>
+                <div class="social-links text-center">
+                    <a href="https://www.linkedin.com/in/murali-krishna-b84866271" target="_blank" class="btn-brutal btn-white">LinkedIn <img src="assests/Linkedin_logo.png" alt="Company Logo" class="logo-after-name"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Murali Krishna. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
